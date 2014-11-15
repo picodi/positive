@@ -12,7 +12,7 @@ class DefaultController extends Controller
     }
     public function aboutAction()
     {
-        return $this->render('PositiveWebsiteBundle:Default:index.html.twig');
+        return $this->render('PositiveWebsiteBundle:Default:about.html.twig');
     }
     public function videoAction()
     {
@@ -37,6 +37,6 @@ class DefaultController extends Controller
 
     public function subscribeAction()
     {
-        
+
     }
 }

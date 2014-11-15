@@ -1,4 +1,4 @@
-positive_website_homepage:
+home:
     path:     /
     defaults: { _controller: PositiveWebsiteBundle:Default:index }
 

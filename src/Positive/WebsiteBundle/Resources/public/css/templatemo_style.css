@@ -506,7 +506,7 @@ header.site-header {
   width: 100%;
   margin: 0 auto;
   position: absolute;
-  top: 40%;
+  top: 10%;
   left: 0;
   font-size: 26px;
   color: #222;
@@ -638,7 +638,7 @@ header.site-header {
 }
 /*** BOTTOM SECTION STYLING ***/
 #bottom-section {
-  background: url(../images/bg2.png) no-repeat center top;
+  background: url(../images/skin/bg2.png) no-repeat center top;
   background-size: cover;
   padding-top: 300px;
   margin-top: -320px;
