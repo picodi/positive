@@ -1,0 +1,32 @@
+<header class="site-header" id="top">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#main-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="logo-wrapper">
+                        <a class="navbar-brand" href="#">
+                            <img src="{{ asset('bundles/positivewebsite/images/data/thumb_logo.jpg')}}" width="70"/>
+                            <em>Positive</em> Site
+                            <span class="logo-s"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <span class="nav-s"></span>
+                        <li><a href="{{ path('about') }}">About</a></li>
+                        <li><a href="{{ path('video') }}">Video</a></li>
+                        <li><a href="{{ path('audio') }}">Audio</a></li>
+                        <li><a href="{{ path('gigs') }}">Gigs</a></li>
+                        <li><a href="{{ path('goodies') }}">Goodies</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

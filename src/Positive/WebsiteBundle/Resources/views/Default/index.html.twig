@@ -1,0 +1,28 @@
+{% extends "PositiveWebsiteBundle::layout.html.twig" %}
+
+{% block scripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/positivewebsite/css/flexslider.css')}}" />
+    <link rel="stylesheet" href="{{ asset('bundles/positivewebsite/css/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('bundles/positivewebsite/css/templatemo_style.css')}}" />
+    <script src="{{ asset('bundles/positivewebsite/js/homepage-slider.js')}}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div id="slider">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="{{ asset('bundles/positivewebsite/images/data/banner_one_trick.png')}}" alt="" />
+                </li>
+                <li>
+                    <img src="{{ asset('bundles/positivewebsite/images/data/banner_fine.jpg')}}" alt="" />
+                </li>
+                <li>
+                    <img src="{{ asset('bundles/positivewebsite/images/data/firma_banner.jpg')}}" alt="" />
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

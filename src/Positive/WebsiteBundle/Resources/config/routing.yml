@@ -1,0 +1,22 @@
+positive_website_homepage:
+    path:     /
+    defaults: { _controller: PositiveWebsiteBundle:Default:index }
+
+about:
+    path:     /about
+    defaults: { _controller: PositiveWebsiteBundle:Default:about }
+video:
+    path:     /video
+    defaults: { _controller: PositiveWebsiteBundle:Default:video }
+audio:
+    path:     /audio
+    defaults: { _controller: PositiveWebsiteBundle:Default:audio }
+gigs:
+    path:     /gigs
+    defaults: { _controller: PositiveWebsiteBundle:Default:gigs }
+goodies:
+    path:     /goodies
+    defaults: { _controller: PositiveWebsiteBundle:Default:goodies }
+contact:
+    path:     /contact
+    defaults: { _controller: PositiveWebsiteBundle:Default:contact }
