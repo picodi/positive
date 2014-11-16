@@ -1,0 +1,14 @@
+Positive\WebsiteBundle\Entity\Fan:
+    type: entity
+    table: fan
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        email:
+            type: string
+            length: 255
+        active:
+            type: boolean
+            nullable: true
