@@ -1,0 +1,89 @@
+{% extends "PositiveWebsiteBundle::layout.html.twig" %}
+
+{% block scripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/positivewebsite/css/concert.css') }}">
+{% endblock %}
+{% block content %}
+    <!--
+    <div class="content-wrapper">
+        <div class="inner-container container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="product-heading">
+                        <h1 class="section-title">{{ concert.name }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+    <div id="wrapper">
+        <div class="content-wrapper top-section">
+            <div class="inner-container container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="product-heading">
+                            <h1 class="section-title">{{ concert.name }}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="products">
+            <div class="row">
+                <div class="blog-image col-md-6">
+                    <div id="portfolio-wrapper">
+                        <img class="col-md-12" src="{{ asset('bundles/positivewebsite/images/concert/' ~ concert.image)}}" alt="image">
+                    </div>
+                </div> <!-- /.blog-image -->
+                <div class="blog-info col-md-6">
+                    <div class="box-content">
+                        <span class="concert-date">{{ concert.date|date("D, F j Y, \\a\\t G:i") }}</span>
+                        <div class="concert-data">
+                            <span class="concert-location">{{ concert.location }}</span>
+                            <img class="image-location" src="{{ asset('bundles/positivewebsite/images/skin/location.png')}}"/>
+                                <span>{{ concert.address }}
+                                    <a href="#map"> (show Map)</a></span>
+
+                        </div>
+                        <p>For more details be sure to check: <a href="https://www.facebook.com/events/772649462777685">Facebook</a></p>
+
+                        <p>{{ concert.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper bottom-section">
+            <div class="row">
+                <div class="col-md-12">
+                    <a name="map"></a>
+                    <div class="map-holder">
+                        <div id="map_canvas" class="map-canvas"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+            <script src="{{ asset('bundles/positivewebsite/js/jquery.gmap3.min.js')}}"></script>
+
+            <!-- Google Map Init-->
+            <script type="text/javascript">
+                jQuery(function($){
+                    $('#map_canvas').gmap3({
+                        marker:{
+                            address: '{{ concert.latitude }},{{ concert.longitude }}'
+                        },
+                        map:{
+                            options:{
+                                zoom: 15,
+                                scrollwheel: false,
+                                streetViewControl : true
+                            }
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+{% endblock %}

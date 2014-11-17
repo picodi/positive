@@ -1,5 +1,6 @@
 Positive\WebsiteBundle\Entity\Concert:
     type: entity
+    repositoryClass: Positive\WebsiteBundle\Repository\ConcertRepository
     table: concert
     id:
         id:
@@ -32,3 +33,10 @@ Positive\WebsiteBundle\Entity\Concert:
         url:
             type: string
             length: 255
+        slug:
+              type: string
+              length: 255
+              unique: true
+    lifecycleCallbacks:
+        prePersist: [ setSlugValue ]
+        preUpdate: [ setSlugValue ]

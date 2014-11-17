@@ -3,6 +3,7 @@
 namespace Positive\WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Positive\WebsiteBundle\Utils\Positive as Positive;
 
 /**
  * Concert
@@ -275,5 +276,68 @@ class Concert
     public function getAddress()
     {
         return $this->address;
+    }
+    /**
+     * @var string
+     */
+    private $slug;
+
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Concert
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+    /**
+     * @ORM\prePersist
+     */
+    public function setSlugValue()
+    {
+        $this->slug = Positive::slugify($this->getName());
+    }
+    /**
+     * @var string
+     */
+    private $lifecycleCallbacks;
+
+
+    /**
+     * Set lifecycleCallbacks
+     *
+     * @param string $lifecycleCallbacks
+     * @return Concert
+     */
+    public function setLifecycleCallbacks($lifecycleCallbacks)
+    {
+        $this->lifecycleCallbacks = $lifecycleCallbacks;
+
+        return $this;
+    }
+
+    /**
+     * Get lifecycleCallbacks
+     *
+     * @return string 
+     */
+    public function getLifecycleCallbacks()
+    {
+        return $this->lifecycleCallbacks;
     }
 }

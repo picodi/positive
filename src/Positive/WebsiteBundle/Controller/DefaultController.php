@@ -24,7 +24,13 @@ class DefaultController extends Controller
     }
     public function gigsAction()
     {
-        return $this->render('PositiveWebsiteBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $future = $em->getRepository('PositiveWebsiteBundle:Concert')->getFutureConcerts();
+        $past = $em->getRepository('PositiveWebsiteBundle:Concert')->getPastConcerts();
+        return $this->render('PositiveWebsiteBundle:Concert:gigs.html.twig', array(
+            'future' => $future,
+            'past' => $past,
+        ));
     }
     public function goodiesAction()
     {
@@ -38,5 +44,19 @@ class DefaultController extends Controller
     public function subscribeAction()
     {
 
+    }
+
+    public function concertPageAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $concert = $em->getRepository('PositiveWebsiteBundle:Concert')->findOneBySlug($slug);
+
+        if (!$concert) {
+            throw $this->createNotFoundException('Concert not found in this universe');
+        }
+
+        return $this->render('PositiveWebsiteBundle:Concert:event.html.twig', array(
+            'concert' => $concert,
+        ));
     }
 }

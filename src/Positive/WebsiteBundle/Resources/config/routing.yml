@@ -20,3 +20,6 @@ goodies:
 contact:
     path:     /contact
     defaults: { _controller: PositiveWebsiteBundle:Default:contact }
+event:
+    path:     /event/{slug}
+    defaults: { _controller: PositiveWebsiteBundle:Default:concertPage }

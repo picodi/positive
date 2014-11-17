@@ -1,0 +1,106 @@
+.blog-info {
+    color: #fff;
+}
+.image-location {
+    width: 60px;
+    height: 60px;
+    border: none;
+    display:inline-block;
+    margin-top: -30px;
+    margin-left: -20px;
+
+}
+
+.blog-info .concert-data {
+    font-weight: normal;
+    display:inline-block;
+}
+.blog-info .concert-date {
+    margin: 20px 0;
+    display: block;
+    font-size: 2em;
+    font-weight: normal;
+}
+.concert-location {
+    margin-left: 40px;
+    font-size: 2em;
+    display: block;
+}
+@media screen and (max-width: 768px) {
+    .blog-info h2.concert-data {
+        font-size: 1.6em;
+    }
+}
+.inner-container {
+    background-color: #fff;
+    width: 100%;
+}
+
+#product-heading {
+    text-align: center;
+}
+
+#product-heading h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-title {
+    color: #777;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.section-title:before {
+    content: '';
+    width: 180px;
+    height: 3px;
+    background: url(../images/skin/t-left.png) no-repeat center;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    display: inline-block;
+}
+.section-title:after {
+    content: '';
+    width: 180px;
+    height: 3px;
+    background: url(../images/skin/t-right.png) no-repeat center;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    display: inline-block;
+}
+
+
+.content-wrapper {
+    background-color: #963b59;
+}
+#products {
+    background: url(../images/skin/bg1.png) no-repeat center top;
+    background-size: cover;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: -600px;
+}
+
+#wrapper {
+    background-color: #963b59;
+}
+.top-section {
+    padding-top: 20px;
+}
+
+.bottom-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.portfolio-wrapper {
+    overflow: hidden;
+    padding-top: 20px;
+}
