@@ -1,0 +1,68 @@
+{% extends "PositiveWebsiteBundle::layout.html.twig" %}
+
+{% block scripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/positivewebsite/css/contact.css') }}">
+    <script src="{{ asset('bundles/positivewebsite/js/contact.js')}}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="content-section" id="contact">
+    <div class="container">
+    <div class="col-md-3"></div>
+    <div class="box-content col-md-6">
+        <div class="row b54b4b">
+            <div class="contact-form-inner">
+                <form method="post" action="{{ path('contact') }}" name="contactform" id="contactform" onsubmit="return validateForm()">
+
+                    <div class="form-row col-md-12">
+                        <p class="form-message"></p>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <div class="col-md-2">
+                            {{ form_label(form.name) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_errors(form.name) }}
+                            {{ form_widget(form.name) }}
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <div class="col-md-2">
+                            {{ form_label(form.email) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_errors(form.email) }}
+                            {{ form_widget(form.email) }}
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <div class="col-md-2">
+                            {{ form_label(form.subject) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_errors(form.subject) }}
+                            {{ form_widget(form.subject) }}
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <div class="col-md-2">
+                            {{ form_label(form.body) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_errors(form.body) }}
+                            {{ form_widget(form.body) }}
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <input type="submit" class="submitBtn" id="submit" value="Send Message" />
+                    </div>
+                    {{ form_end(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

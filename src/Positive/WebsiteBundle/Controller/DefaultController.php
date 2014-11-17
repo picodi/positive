@@ -2,7 +2,10 @@
 
 namespace Positive\WebsiteBundle\Controller;
 
+use Positive\WebsiteBundle\Form\ContactType ;
+use Positive\WebsiteBundle\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -36,9 +39,21 @@ class DefaultController extends Controller
     {
         return $this->render('PositiveWebsiteBundle:Default:index.html.twig');
     }
-    public function contactAction()
+    public function contactAction(Request $request)
     {
-        return $this->render('PositiveWebsiteBundle:Default:index.html.twig');
+        $contact = new Contact();
+        $form = $this->createForm(new ContactType(), $contact);
+
+        $form->bind($request);
+
+        if ($form->isValid()) {
+            var_dump("Aaaaaaaa");
+            die();
+        }
+
+        return $this->render('PositiveWebsiteBundle:Default:contact.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 
     public function subscribeAction()
